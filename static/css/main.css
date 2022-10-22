@@ -45,3 +45,37 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--colorOrange);
 }
 
+@media (max-width: 955px) {
+  body {
+    padding-left:30rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 940px) {
+  body {
+    padding-left:28rem;
+    padding-right: 1rem;
+  }
+}
+
+
+@media (max-width: 870px) {
+  body {
+    padding-left: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 48%;
+  }
+}
