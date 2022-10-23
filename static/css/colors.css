@@ -1,0 +1,63 @@
+/* all color hex and rgb code for (DARK MODE) */
+:root {
+    /* ---------- DARK ---------- */
+    --colorDark: #0E0E0E;
+    --colorDarkMedium: #10110E;   
+    --colorDarkLight: #4F4F4F;
+    --colorDarkExtraLight: #848484;
+
+    /* ---------- WHITE ---------- */
+    --colorWhite: #FFFFFF;
+    --colorWhiteMedium: #F9F9F9;   
+    --colorWhiteLight: #F1F1F1;
+    --colorWhiteExtraLight: #EBEBEB;
+
+    /* ---------- ORANGE ---------- */
+    --colorOrange: #F5E164;
+    --colorOrangeMedium: #fbf438;   
+    --colorOrangeLight: #fff951;
+    --colorOrangeExtraLight: #fffb95;
+
+    /* --------- YELLOW --------- */
+    --colorYelllow:#FFF500;
+    --colorYellowMedium:#fbf438;
+    --colorYellowLight:#fff951;
+    --colorExtraLight:#fffb95;
+
+    /* Gradients */
+    --gradientColor1:#BD00FF;
+    --gradientColor2:#0085FF;
+    --gradientColor3:#FFF500;
+    --gradientColor4:#FFB800;
+    --gradientColor5:#FF5C00;
+    --gradientColor6:#FF0000;
+    --gradientColor7:#00E0FF;
+    --gradientColor8:#00D1FF;
+
+    /* Status button */
+    --buttonColorYellow: rgb(255, 184, 0);
+    --buttonColorLightYellow: rgba(155, 184, 0, 0.1);
+
+    --buttonColorOrange: rgb(252, 96, 88);
+    --buttonColorLightOrange: rgba(252, 96, 88, 0.1);
+
+    --buttonColorBlue: rgb(0, 149, 255);
+    --buttonColorLightBlue: rgba(0, 149, 255, 0.1);
+
+    --buttonColorRed: rgb(236,95,104);
+    --buttonColorLightRed: rgba(254, 141, 148, 0.1);
+
+    --buttonColorGreen: rgb(176, 255, 96);
+    --buttonColorLightGreen: rgba(214, 255, 173, 0.1);
+
+    /* Sidebar top navigation DOT color */
+    --dotColor1:#FC6058;
+    --dotColor2:#FEC02F;
+    --dotColor3:#2ACA3E;
+
+    /* Others */
+    --seperatorColor:#35363843;
+    --iconBackgroundColor:#62634e5e;
+    --bgObjectBlur:rgba(233, 224, 54, 0.5);
+    --transparentColor:rgba(0, 0, 0, 0);
+}

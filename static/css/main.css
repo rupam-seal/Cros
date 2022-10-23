@@ -1,0 +1,47 @@
+/* 
+1rem = 16px || 100%
+1px = 16/100 = 6.25%
+10px = 6.25%*10 = 62.5%
+Now
+1rem = 10px || 62.5%
+*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding-left: 32rem;
+    padding-top: 2rem;
+    padding-right: 5rem;
+    background-color: var(--colorDark);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Removing unwanted margin from "h tag" */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+/* ========= SCROLLBAR ========== */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--colorDarkMedium);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--colorDarkLight);
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--colorOrange);
+}
+
