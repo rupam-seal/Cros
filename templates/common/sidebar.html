@@ -1,0 +1,110 @@
+<!-- ========== SIDEBAR ========== -->
+<div class="sidebar">
+    <div class="top">
+        <!-- ---------- SIDEBAR HEADER ---------- -->
+        <div class="header__container">
+            <div class="nav__dot-container">
+                <div class="nav__dot dot1"></div>
+                <div class="nav__dot dot2"></div>
+                <div class="nav__dot dot3"></div>
+            </div>
+            <div class="logo__container">
+                <div class="logo__round"></div>
+                <h3 class="logo__txt">Rep<span class="logo__highlight">T</span></h3>
+            </div>
+        </div>
+        
+        <!-- ---------- SIDEBAR NAV LINK -->
+        <div class="nav__container">
+            <div class="nav nav__dashboard {% if navbar == 'dashboard' %} nav--active {% endif %}">
+                {% if navbar == 'dashboard' %}
+                <a href="{% url 'dashboard' %}">
+                    <img class="nav__img" src="/static/icons/ic_dashboard_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'dashboard' %}">
+                    <img class="nav__img" src="/static/icons/ic_dashboard.svg"></img>
+                </a>
+                {% endif %}
+                
+                <a class="nav__txt" href="{% url 'dashboard' %}">Dashboard</a>
+            </div>
+
+            {% if request.user.is_staff %}
+            <div class="nav nav__orders {% if navbar == 'orders' %} nav--active {% endif %}">
+                {% if navbar == 'orders' %}
+                <a href="{% url 'orders' %}">
+                    <img class="nav__img" src="/static/icons/ic_orders_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'orders' %}">
+                    <img class="nav__img" src="/static/icons/ic_orders.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'orders' %}">Orders</a>
+            </div>
+
+            <div class="nav nav__items {% if navbar == 'category' %} nav--active {% endif %}">
+                {% if navbar == 'category' %}
+                <a href="{% url 'category' %}">
+                    <img class="nav__img" src="/static/icons/ic_items_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'category' %}">
+                    <img class="nav__img" src="/static/icons/ic_items.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'category' %}">Category</a>
+            </div>
+
+            <div class="nav nav__customer {% if navbar == 'customers' %} nav--active {% endif %}">
+                {% if navbar == 'customers' %}
+                <a href="{% url 'customers' %}">
+                    <img class="nav__img" src="/static/icons/ic_customers_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'customers' %}">
+                    <img class="nav__img" src="/static/icons/ic_customers.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'customers' %}">Customer</a>
+            </div>
+
+            <div class="nav nav__create {% if navbar == 'create' %} nav--active {% endif %}">
+                {% if navbar == 'create' %}
+                <a href="{% url 'create' %}">
+                    <img class="nav__img" src="/static/icons/ic_create_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'create' %}">
+                    <img class="nav__img" src="/static/icons/ic_create.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'create' %}">Create</a>
+            </div>
+            {% else %}
+            <div class="nav nav__orders {% if navbar == 'customerOrders' %} nav--active {% endif %}">
+                {% if navbar == 'customerOrders' %}
+                <a href="{% url 'customerOrders' %}">
+                    <img class="nav__img" src="/static/icons/ic_orders_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'customerOrders' %}">
+                    <img class="nav__img" src="/static/icons/ic_orders.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'customerOrders' %}">Orders</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- -------- SIDEBAR LOGOUT ---------- -->
+    <div class="logout">
+        <a href="{% url 'logout' %}">
+            <img src="/static/icons/ic_logout.svg" alt="" class="logout__img">
+        </a>
+        <a href="{% url 'logout' %}" class="logout__txt">
+            Logout
+        </a>
+    </div>
+</div>

@@ -31,9 +31,21 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!-- ----- Root Colors ----- -->
     <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ----- Font Size and Styles ----- -->
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+
+    <!-- ========== Common Components Styles ========== -->
+
+    <!-- ----- Sidebar Styles ----- -->
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
 
 </head>
 <body>
+    <!-- Sidebar -->
+    {% include 'common/sidebar.html' %}
 
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
