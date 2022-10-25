@@ -1,0 +1,34 @@
+{% load static %}
+<!-- ========== TOPBAR ========== -->
+<div class="topbar">
+    <!-- ---------- TOPBAR SEARCH CONTAINER ---------- -->
+    <img src="{% static 'icons/ic-menu.svg' %}" alt="" class="menu">
+    <h3 class="top__title">Welcome {{request.user}}</h3>
+    <form class="search__container" autocomplete="off" id="search-form" method="post">
+        {% csrf_token %}
+        <img src="/static/icons/ic-input-search.svg" alt="" class="search__img">
+        <input type="text" class="search__inp" placeholder="Search .." id="search-input">
+    </form>
+
+    <!-- ---------- TOPBAR RIGHT CONTAINER ---------- -->
+    <div class="right">
+        <div class="right__calendar-container">
+            <img src="/static/icons/ic_calendar.svg" alt="" class="right__icon right__calendar">
+            <h6 id="right__calendar-txt"></h6>
+        </div>
+        <div class="right__icon-container right__icon-container--hidden">
+            <img src="/static/icons/ic-input-search.svg" alt="" class="right__icon right__search">
+        </div>
+        <div class="right__icon-container">
+            <img src="/static/icons/ic_notifications.svg" alt="" class="right__icon right__notification">
+        </div>
+        <div class="right__img-container">
+            <img src="{{ request.user.customer.profile_image.url }}" alt="" class="right__img">
+        </div>
+    </div>
+
+    <div class="right__box not-visible" id="result-box">
+
+    </div>
+</div>
+

@@ -38,11 +38,15 @@
 
     <!-- ----- Sidebar Styles ----- -->
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <!-- ----- Topbar Styles ----- -->
+    <link rel="stylesheet" href="{% static 'css/topbar.css' %}">
 
 </head>
 <body>
     <!-- Sidebar -->
     {% include 'common/sidebar.html' %}
+    <!-- Topbar -->
+    {% include 'common/topbar.html' %}
 
     {% block content %}
 
