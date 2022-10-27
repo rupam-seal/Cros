@@ -1,0 +1,44 @@
+{% extends 'common/main.html' %}
+
+{% block content %}
+<!-- ========== CATEGORY CONTAINER ========== -->
+<div class="table-container">
+    <!-- ---------- CATEGORY TABLE ---------- -->
+      <table class="table">
+        <!-- table header -->
+        <thead class="table__header">
+            <tr class="table__header-raw">
+              <th class="col col1">No</th>
+              <th class="col col2">Category</th>
+              <th class="col col3">Date</th>
+              <th class="col col4">Quantity</th>
+              <th class="col col5">Status</th>`
+            <tr>
+          </thead>
+        <!-- table body -->
+          <!-- get all category from 'category' model -->
+          {% for category in categories %}
+          <tbody class="table__body">
+            <tr class="table__body-raw" data-href="{% url 'items' category.id %}">
+              <td class="col col1">{{category.id}}</td>
+              <td class="col col2">{{category.name}}</td>
+              <td class="col col3">{{category.date_created}}</td>
+              <td class="col col4">{{category.quantity}}</td>
+              <!-- showing different id based on category status -->
+              {% if category.status == 'High' %}
+              <td class="col col5">
+                <button class="table__status table__status--high">High</button>
+              </td>
+              {% else %}
+              <td class="col col5">
+                <button class="table__status table__status--low">High</button>
+              </td>
+              {% endif %}
+            </tr>
+          </tbody>
+          {% endfor %}
+    </table>
+    <!-- empty container ( for showing "NOTHING HERE") -->
+    {% include 'admin/nothing.html' %}
+</div>
+{% endblock %}
