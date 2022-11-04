@@ -1,0 +1,143 @@
+/* table title */
+.table-title {
+    color: var(--colorDarkLight);
+    margin: 3rem 2rem 2rem 3rem;
+}
+
+.table-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    border-style: none;
+    vertical-align: middle;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0rem 2rem;
+    font-size: 1.4rem;
+}
+
+.table__header-raw,
+.table__body-raw {
+    background-color: var(--colorDarkMedium);
+    border-radius: 10rem;
+}
+
+.table__header-raw
+.col {
+    /* background-image: url('/static/icons/ic_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 80%;
+    background-size: 2rem; */
+    color: var(--colorDarkExtraLight);
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+}
+
+.table__body-raw
+.col {
+    color: var(--colorDarkLight);
+    font-weight: 600;
+    padding: 1rem 1rem;
+}
+
+.table__body:before {
+    content:"@";
+    display:block;
+    line-height:1.2rem;
+    text-indent:-99999px;
+}
+
+/* ----- applying border-radius to th and td ----- */
+td, th {
+    border: solid 1px transparent;
+    border-style: none solid solid none;
+    padding: 10px;
+}
+tr:first-child td:first-child,
+tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+tr:first-child td:last-child,
+tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+tr:first-child td,
+tr:first-child th {
+    border-top-style: solid;
+}
+tr td:first-child,
+tr th:first-child {
+    border-left-style: solid;
+}
+
+/* button table status */
+.table__status {
+    font-size: 1.2rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    padding: 0.5rem 1.5rem;
+}
+
+/* table status--paid */
+.table__status--paid {
+    color: var(--buttonColorYellow);
+    background-color: var(--buttonColorLightYellow);
+}
+
+/* table status--pending */
+.table__status--pending {
+    color: var(--buttonColorOrange);
+    background-color: var(--buttonColorLightOrange);
+}
+
+/* table status--high */
+.table__status--high {
+    color: var(--buttonColorGreen);
+    background-color: var(--buttonColorLightGreen);
+}
+
+/* table status--low */
+.table__status--low {
+    color: var(--buttonColorRed);
+    background-color: var(--buttonColorLightRed);
+}
+
+/* button table edit */
+.table__edit {
+    font-size: 1.2rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    padding: 0.5rem 1.5rem;
+    border-width: 0.1px;
+    color: var(--buttonColorGreen);
+    background-color: var(--buttonColorLightGreen);
+    cursor: pointer;
+}
+
+/* button table delete */
+.table__delete {
+    font-size: 1.2rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    padding: 0.5rem 1.5rem;
+    border-width: 0.1px;
+    color: var(--buttonColorRed);
+    background-color: var(--buttonColorLightRed);
+    cursor: pointer;
+}
+
+/* table button active */
+.table__edit:active,
+.table__delete:active {
+    background-image: linear-gradient(var(--colorWhite), var(--colorWhite));
+    color: var(--colorDark);
+    box-shadow: .5rem .5rem 20px rgba(0, 0, 0, 0.2);
+}
