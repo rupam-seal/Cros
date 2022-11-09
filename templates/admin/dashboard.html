@@ -86,4 +86,62 @@
     {% include 'admin/nothing.html' %}
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+    const data1 = {
+        labels: {{labels|safe}},
+        datasets: [{
+        label: 'Sales',
+        data: {{order_data|safe}},
+        borderRadius: 5,
+        borderWidth:1,
+        borderColor:'#46B1A1',
+        borderSkipped: false,
+        },
+        {
+        label: 'Stock',
+        borderColor:'#F5E164',
+        data: {{stock_data|safe}},
+        borderRadius: 5,
+        borderWidth:1,
+        borderSkipped: false,
+        },
+    ]
+    };
+
+    const config1 = {
+        type: 'line', 
+        data: data1,
+        options: {
+          responsive: true,
+        }
+    };
+
+    const data2 = {
+        labels: ['Pending', 'Paid'],
+        datasets: [{
+        label: 'Sales',
+        backgroundColor: ['#46B1A1', '#F5E164'],
+        data: [{{pending_order|safe}},{{paid_order|safe}}],
+        borderWidth:5,
+        borderColor:'#070707',
+        },
+    ]
+    };
+
+    const config2 = {
+        type: 'pie', 
+        data: data2,
+        options: {
+          responsive: true,
+        }
+    };
+  window.onload = function() {
+    var ctx = document.getElementById('chart1').getContext('2d');
+    window.myPie = new Chart(ctx, config1);
+
+    var ctx2 = document.getElementById('chart2').getContext('2d');
+    window.myPie = new Chart(ctx2, config2);
+  };
+</script>
 {% endblock %}
