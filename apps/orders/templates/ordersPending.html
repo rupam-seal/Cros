@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- ========== ORDERS PENDING CONTAINER ========== -->
+<div class="table-container">
+    <!-- ---------- ORDERS PAID TABLE ---------- -->
+        <table class="table">
+        <!-- table header -->
+        <thead class="table__header">
+            <tr class="table__header-raw">
+              <th class="col col1">Id</th>
+              <th class="col col2">Product</th>
+              <th class="col col3">Quantity</th>
+              <th class="col col4">Price</th>
+              <th class="col col5">Status</th>
+              {% if request.user.is_staff %}
+              <th class="col col6">Edit</th>
+              <th class="col col7">Delete</th>
+              {% endif %}
+            <tr>
+          </thead>
+          {% for order in orders %}
+        <!-- table body -->
+          <!-- get all pending orders from 'orders' model -->
+          <tbody class="table__body">
+            <tr class="table__body-raw">
+              <td class="col col1">{{order.id}}</td>
+              <td class="col col2">{{order.item}}</td>
+              <td class="col col3">{{order.quantity}}</td>
+              <td class="col col4">{{order.price}}</td>
+              <td class="col col5">
+                  <button class="table__status table__status--pending">Pending</button>
+              </td>
+              {% if request.user.is_staff %}
+              <!-- edit and delete button for only pending orders -->
+              <td class="col col6">
+                <button class="table__edit">Edit</button>
+              </td>
+              <td class="col col7">
+                <a href="{% url 'removeOrder' order.id %}">
+                  <button class="table__delete">Delete</button>
+                </a>
+              </td>
+              {% endif %}
+            </tr>
+          </tbody>
+          {% endfor %}
+    </table>
+    <!-- empty container ( for showing "NOTHING HERE") -->
+    {% include 'nothing.html' %}
+</div>
+
+{% endblock %}

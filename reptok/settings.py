@@ -40,14 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Authentication and Authorization
-    'authentication.apps.AuthenticationConfig',
-    # Main
-    'core.apps.CoreConfig',
-    # Admin
-    'admin_user.apps.AdminUserConfig',
-    # Customer
-    'customer_user.apps.CustomerUserConfig',
+
+    'apps.authentication.apps.AuthenticationConfig',
+    'apps.category.apps.CategoryConfig',
+    'apps.create.apps.CreateConfig',
+    'apps.dashboard.apps.DashboardConfig',
+    'apps.orders.apps.OrdersConfig',
+    'apps.staff.apps.StaffConfig',
+    'apps.core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [

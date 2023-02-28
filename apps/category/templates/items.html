@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+
+{% block content %} 
+<!-- ========== ITEMS CONTAINER ========== -->
+<div class="table-container">
+    <!-- ---------- ITEM TABLE ---------- -->
+      <table class="table">
+        <!-- table header -->
+        <thead class="table__header">
+            <tr class="table__header-raw">
+              <th class="col col1">No</th>
+              <th class="col col2">Name</th>
+              <th class="col col3">Weight</th>
+              <th class="col col4">Price</th>
+              <th class="col col5">Rate</th>
+              <th class="col col6">Quantity</th>
+              <th class="col col7">Tag</th>
+              <th class="col col7">Edit</th>
+              <th class="col col7">Delete</th>
+            <tr>
+          </thead>
+        <!-- table body -->
+          <!-- get all item from 'items' model -->
+          {% for item in items %}
+          <tbody class="table__body">
+            <tr class="table__body-raw">
+              <td class="col col1">{{item.id}}</td>
+              <td class="col col2">{{item.name}}</td>
+              <td class="col col3">{{item.weight}}</td>
+              <td class="col col4">{{item.price}}</td>
+              <td class="col col5">{{item.rate}}</td>
+              <td class="col col6">{{item.quantity}}</td>
+              <td class="col col7">{{item.tag}}</td>
+              <td class="col col5">
+                <button class="table__edit">Edit</button>
+              </td>
+              <!-- button delete -->
+              <td class="col col5">
+                <a href="{% url 'removeItem' item.id %}">
+                  <button class="table__delete">
+                    Delete
+                  </button>
+                </a>
+              </td>
+          </tbody>
+          {% endfor %}
+    </table>
+    <!-- empty container ( for showing "NOTHING HERE") -->
+    {% include 'nothing.html' %}
+</div>
+{% endblock %}

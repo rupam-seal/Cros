@@ -19,17 +19,16 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from admin_user.views import search_result
+# from admin_user.views import search_result
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # User authentication
-    path('', include('authentication.urls')),
-    # Admin
-    path('', include('admin_user.urls')),
-    # Customers
-    path('', include('customer_user.urls')),
-    path('search/', search_result, name='search'),
+    path('', include('apps.authentication.urls')),
+    path('', include('apps.dashboard.urls')),
+    path('', include('apps.category.urls')),
+    path('', include('apps.orders.urls')),
+    path('', include('apps.create.urls')),
+    path('', include('apps.staff.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
