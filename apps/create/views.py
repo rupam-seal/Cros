@@ -16,7 +16,7 @@ from apps.core.models import Item
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def create(request):
     itemForm = ItemForm()
     categoryForm = CategoryForm()

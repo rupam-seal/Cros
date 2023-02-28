@@ -32,61 +32,10 @@
     </div>
 </div>
 
-<!-- <script>
-    const sendSearchData = (series) => {
-        $.ajax({
-            type: 'POST',
-            url: '{% url "search" ',
-            data: {
-                "csrfmiddlewaretoken":csrf,
-                'series':series,
-            },
-            success: (res) => {
-                const data = res.data
-                result_box.innerHTML = ""
-                if (Array.isArray(data)) {
-                    data.forEach(series => {
-                        result_box.innerHTML += `
-                            <a href="" class='link'>
-                                <h5>${series.name}</h5>
-                            </a> 
-                        `
-                    })
-                }else {
-                    if (search_input.value.length > 0) {
-                        result_box.innerHTML = `<b>${data}</b>`
-                    } else {
-                        result_box.classList.add('not-visible')
-                    }
-                }
-            },
-            error: (err) => {
-                console.log(err);
-            }
-        })
-    }
-
+<script>
     let date = new Date().toUTCString().slice(5, 16);
 
     date_txt = document.getElementById('right__calendar-txt');
 
     date_txt.innerHTML = "<span class='right__calendar-txt'>"+date+"</span>";
-
-    const search_form = document.getElementById("search-form");
-
-    const search_input = document.getElementById("search-input");
-
-    const result_box = document.getElementById('result-box');
-
-    const csrf = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-
-    search_input.addEventListener('keyup', e=>{
-        console.log(e.target.value);
-        if (result_box.classList.contains('not-visible')){
-        result_box.classList.remove('not-visible')
-        }
-
-        sendSearchData(e.target.value)
-    })
-
-</script> -->
+</script>

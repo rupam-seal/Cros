@@ -30,7 +30,6 @@
                 <a class="nav__txt" href="{% url 'dashboard' %}">Dashboard</a>
             </div>
 
-            {% if request.user.is_staff %}
             <div class="nav nav__orders {% if navbar == 'orders' %} nav--active {% endif %}">
                 {% if navbar == 'orders' %}
                 <a href="{% url 'orders' %}">
@@ -56,7 +55,7 @@
                 {% endif %}
                 <a class="nav__txt" href="{% url 'category' %}">Category</a>
             </div>
-
+            {% if request.user.is_staff %}
             <div class="nav nav__customer {% if navbar == 'staffs' %} nav--active {% endif %}">
                 {% if navbar == 'staffs' %}
                 <a href="{% url 'staffs' %}">
@@ -69,7 +68,20 @@
                 {% endif %}
                 <a class="nav__txt" href="{% url 'staffs' %}">Staffs</a>
             </div>
-
+            {% else %}
+            <div class="nav nav__customer {% if navbar == 'staffs' %} nav--active {% endif %}">
+                {% if navbar == 'staffs' %}
+                <a href="{% url 'staffs' %}">
+                    <img class="nav__img" src="/static/icons/ic_customers_active.svg"></img>
+                </a>
+                {% else %}
+                <a href="{% url 'staffs' %}">
+                    <img class="nav__img" src="/static/icons/ic_customers.svg"></img>
+                </a>
+                {% endif %}
+                <a class="nav__txt" href="{% url 'staffs' %}">Customers</a>
+            </div>
+            {% endif %}
             <div class="nav nav__create {% if navbar == 'create' %} nav--active {% endif %}">
                 {% if navbar == 'create' %}
                 <a href="{% url 'create' %}">
@@ -82,20 +94,6 @@
                 {% endif %}
                 <a class="nav__txt" href="{% url 'create' %}">Create</a>
             </div>
-            {% else %}
-            <div class="nav nav__orders {% if navbar == 'dashboard' %} nav--active {% endif %}">
-                {% if navbar == 'dashboard' %}
-                <a href="{% url 'dashboard' %}">
-                    <img class="nav__img" src="/static/icons/ic_orders_active.svg"></img>
-                </a>
-                {% else %}
-                <a href="{% url 'dashboard' %}">
-                    <img class="nav__img" src="/static/icons/ic_orders.svg"></img>
-                </a>
-                {% endif %}
-                <a class="nav__txt" href="{% url 'dashboard' %}">Orders</a>
-            </div>
-            {% endif %}
         </div>
     </div>
     <!-- -------- SIDEBAR LOGOUT ---------- -->

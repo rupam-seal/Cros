@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.orders.apps.OrdersConfig',
     'apps.staff.apps.StaffConfig',
     'apps.core.apps.CoreConfig',
+    'apps.staffDashboard.apps.StaffdashboardConfig'
 ]
 
 MIDDLEWARE = [

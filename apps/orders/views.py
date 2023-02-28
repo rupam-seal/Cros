@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def orders(request):
     orders = Order.objects.all()
     orders_pending_count = Order.objects.filter(status='Pending').count()
@@ -28,7 +28,7 @@ def orders(request):
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def ordersPaid(request):
     orders = Order.objects.filter(status='Paid')
     order_count = orders.count()
@@ -43,7 +43,7 @@ def ordersPaid(request):
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def ordersPending(request):
     orders = Order.objects.filter(status='Pending')
     order_count = orders.count()

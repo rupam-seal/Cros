@@ -23,12 +23,15 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # ADMIN SITE APPS
     path('', include('apps.authentication.urls')),
     path('', include('apps.dashboard.urls')),
     path('', include('apps.category.urls')),
     path('', include('apps.orders.urls')),
     path('', include('apps.create.urls')),
     path('', include('apps.staff.urls')),
+    # STAFF SITE APPS
+    path('', include('apps.staffDashboard.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
