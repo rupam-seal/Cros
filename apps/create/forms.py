@@ -92,3 +92,23 @@ class TagForm(ModelForm):
                 'class': "form__inp",
             }),
         }
+
+
+class CustomerForm(ModelForm):
+    class Meta:
+        model = Customer
+        fields = '__all__'
+        widgets = {
+            'name': TextInput(attrs={
+                'class': "form__inp",
+            }),
+            'email': TextInput(attrs={
+                'class': "form__inp",
+            }),
+            'phone': TextInput(attrs={
+                'class': "form__inp",
+            }),
+            'gender': Select(attrs={
+                'class': "form__select-inp",
+            }),
+        }

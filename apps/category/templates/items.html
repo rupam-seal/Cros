@@ -15,8 +15,10 @@
               <th class="col col5">Rate</th>
               <th class="col col6">Quantity</th>
               <th class="col col7">Tag</th>
+              {% if request.user.is_staff %}
               <th class="col col7">Edit</th>
               <th class="col col7">Delete</th>
+              {% endif %}
             <tr>
           </thead>
         <!-- table body -->
@@ -31,6 +33,7 @@
               <td class="col col5">{{item.rate}}</td>
               <td class="col col6">{{item.quantity}}</td>
               <td class="col col7">{{item.tag}}</td>
+              {% if request.user.is_staff %}
               <td class="col col5">
                 <button class="table__edit">Edit</button>
               </td>
@@ -42,6 +45,7 @@
                   </button>
                 </a>
               </td>
+              {% endif %}
           </tbody>
           {% endfor %}
     </table>

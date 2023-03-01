@@ -2,9 +2,8 @@
 
 {% block content %}
 <!-- admin can create every model content from here -->
-    {% if request.user.is_staff %}
-
     <div class="form">
+        {% if request.user.is_staff %}
         <div class="form__container">
             <!-- --------- CATEGORY FORM --------- -->
             <form action="" method="POST">
@@ -164,6 +163,49 @@
                     <h5 class="form__name">Status</h5>
                     <div class="form-group">
                         {{orderForm.status}}
+                    </div>
+                </div>
+            </div>
+            <input type="submit" name="submit" class="form__button"></input>
+        </div>
+        </form>
+    </div>
+
+    <!-- -------- CUSTOMER FORM --------- -->
+    <div class="form__container">
+        <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form__card form__order-card">
+            <div class="form__header-container">
+                <h5 class="form__header">customer</h5>
+            </div>
+
+            <div class="form__list">
+                <div class="form__item">
+                    <h5 class="form__name">Name</h5>
+                    <div class="form-group">
+                        {{customerForm.name}}
+                    </div>
+                </div>
+
+                <div class="form__item">
+                    <h5 class="form__name">Email</h5>
+                    <div class="form-group">
+                        {{customerForm.email}}
+                    </div>
+                </div>
+
+                <div class="form__item">
+                    <h5 class="form__name">Phone</h5>
+                    <div class="form-group">
+                        {{customerForm.phone}}
+                    </div>
+                </div>
+
+                <div class="form__item">
+                    <h5 class="form__name">Gender</h5>
+                    <div class="form-group">
+                        {{customerForm.gender}}
                     </div>
                 </div>
             </div>

@@ -14,10 +14,8 @@
               <th class="col col3">Quantity</th>
               <th class="col col4">Price</th>
               <th class="col col5">Status</th>
-              {% if request.user.is_staff %}
               <th class="col col6">Edit</th>
               <th class="col col7">Delete</th>
-              {% endif %}
             <tr>
           </thead>
           {% for order in orders %}
@@ -32,7 +30,6 @@
               <td class="col col5">
                   <button class="table__status table__status--pending">Pending</button>
               </td>
-              {% if request.user.is_staff %}
               <!-- edit and delete button for only pending orders -->
               <td class="col col6">
                 <button class="table__edit">Edit</button>
@@ -42,7 +39,6 @@
                   <button class="table__delete">Delete</button>
                 </a>
               </td>
-              {% endif %}
             </tr>
           </tbody>
           {% endfor %}

@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def category(request):
     categories = Category.objects.all()
     category_count = categories.count()
@@ -25,7 +25,7 @@ def category(request):
 
 
 @login_required(login_url='login')
-@allowed_user(allowed=['admin'])
+@allowed_user(allowed=['admin', 'staff'])
 def items(request, pk):
     category = Category.objects.get(id=pk)
 

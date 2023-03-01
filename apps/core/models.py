@@ -10,7 +10,8 @@ class Customer(models.Model):
         ('Others', 'Others'),
     )
 
-    # profile_image = models.ImageField(default='person.png', null=True, blank=True)
+    profile_image = models.ImageField(
+        default='person.png', null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
     phone = models.IntegerField(default=0, null=True)
@@ -20,23 +21,42 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-    # customer page progress bar
-    def progress(self):
-        customer = Customer.objects.get(name=self.name)
-        # number of order of a customer
-        order = Order.objects.all().count()
+    # # customer page progress bar
+    # def progress(self):
+    #     customer = Customer.objects.get(name=self.name)
+    #     # number of order of a customer
+    #     order = Order.objects.all().count()
 
-        # finding percentage of order share in
-        # total order by each customers
-        if order != 0:
-            each = 100/order
-        else:
-            each = 0
+    #     # finding percentage of order share in
+    #     # total order by each customers
+    #     if order != 0:
+    #         each = 100/order
+    #     else:
+    #         each = 0
 
-        # total percentage of each customer
-        total = customer.order_set.all().count() * each
+    #     # total percentage of each customer
+    #     total = customer.order_set.all().count() * each
 
-        return int(total)
+    #     return int(total)
+
+
+class Staff(models.Model):
+    GENDER = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+        ('Others', 'Others'),
+    )
+
+    profile_image = models.ImageField(
+        default='person.png', null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    phone = models.IntegerField(default=0, null=True)
+    gender = models.CharField(max_length=200, null=True, choices=GENDER)
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
@@ -82,6 +102,7 @@ class Order(models.Model):
 
     customer = models.ForeignKey(
         Customer, null=True, on_delete=models.SET_NULL)
+    seller = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True)
     item = models.ForeignKey(Item, null=True, on_delete=models.SET_NULL)
     price = models.IntegerField(default=0, null=True)
     quantity = models.IntegerField(default=0, null=True)
