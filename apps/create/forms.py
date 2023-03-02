@@ -1,11 +1,7 @@
-from tkinter.tix import Select
 from ..core.models import *
 
 from django import forms
 from django.forms import ModelForm, TextInput, Select
-
-from django.contrib.auth.forms import UserCreationForm
-from django .contrib.auth.models import User
 
 
 class OrderForm(ModelForm):
@@ -15,6 +11,9 @@ class OrderForm(ModelForm):
 
         widgets = {
             'customer': Select(attrs={
+                'class': "form__select-inp",
+            }),
+            'seller': Select(attrs={
                 'class': "form__select-inp",
             }),
             'item': Select(attrs={
@@ -74,9 +73,6 @@ class CategoryForm(ModelForm):
             'name': TextInput(attrs={
                 'class': "form__inp",
             }),
-            'quantity': TextInput(attrs={
-                'class': "form__inp",
-            }),
             'status': Select(attrs={
                 'class': "form__select-inp",
             }),
@@ -90,25 +86,5 @@ class TagForm(ModelForm):
         widgets = {
             'name': TextInput(attrs={
                 'class': "form__inp",
-            }),
-        }
-
-
-class CustomerForm(ModelForm):
-    class Meta:
-        model = Customer
-        fields = '__all__'
-        widgets = {
-            'name': TextInput(attrs={
-                'class': "form__inp",
-            }),
-            'email': TextInput(attrs={
-                'class': "form__inp",
-            }),
-            'phone': TextInput(attrs={
-                'class': "form__inp",
-            }),
-            'gender': Select(attrs={
-                'class': "form__select-inp",
             }),
         }

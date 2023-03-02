@@ -1,0 +1,116 @@
+{% extends 'main.html' %} 
+{% block content %}
+
+<!-- ======== USERS ========= -->
+<div class="users">
+  <!-- --------- staff --------- -->
+  <div class="user">
+    {% for user in users %}
+    <div class="user__card">
+      <div class="user__img-container">
+        <img src="{{ user.profile_image.url }}" alt="" class="user__img" />
+      </div>
+
+      <div class="user__info-container">
+        <h5 class="user__name">{{user.name}}</h5>
+        <h6 class="user__email">{{user.email}}</h6>
+      </div>
+
+      <div class="user__progress-container">
+        <div class="user__progressbar">
+          <div class="user__progress" style="width: 20%"></div>
+        </div>
+        <div class="user__parcentage">%</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="users__list">
+    {% if request.user.is_staff %}
+        <!-- --------- Staff FORM --------- -->
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="form__card form__item-card">
+            <div class="form__header-container">
+              <h5 class="form__header">Create Staff</h5>
+            </div>
+    
+            <div class="form__list">
+              <div class="form__item">
+                <h5 class="form__name">Username</h5>
+                <div class="form-group">{{userForm.username}}</div>
+              </div>
+            </div>
+    
+            <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Email</h5>
+                  <div class="form-group">{{userForm.email}}</div>
+                </div>
+              </div>
+    
+              <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Password</h5>
+                  <div class="form-group">{{userForm.password1}}</div>
+                </div>
+              </div>
+    
+              <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Confirm Password</h5>
+                  <div class="form-group">{{userForm.password2}}</div>
+                </div>
+              </div>
+    
+            <input type="submit" name="submit" class="form__button" />
+          </div>
+        </form>
+    {% else %}
+        <!-- --------- CUSTOMER FORM --------- -->
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="form__card form__item-card">
+            <div class="form__header-container">
+              <h5 class="form__header">Create Customer</h5>
+            </div>
+    
+            <div class="form__list">
+              <div class="form__item">
+                <h5 class="form__name">Name</h5>
+                <div class="form-group">{{userForm.name}}</div>
+              </div>
+            </div>
+    
+            <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Email</h5>
+                  <div class="form-group">{{userForm.email}}</div>
+                </div>
+              </div>
+    
+              <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Phone</h5>
+                  <div class="form-group">{{userForm.phone}}</div>
+                </div>
+              </div>
+    
+              <div class="form__list">
+                <div class="form__item">
+                  <h5 class="form__name">Gender</h5>
+                  <div class="form-group">{{userForm.gender}}</div>
+                </div>
+              </div>
+    
+            <input type="submit" name="submit" class="form__button" />
+          </div>
+        </form>
+        {% endif  %}
+  </div>
+</div>
+
+{% endblock %}

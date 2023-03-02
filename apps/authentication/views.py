@@ -24,9 +24,10 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            # username = form.cleaned_data.get('username')
-            # messages.success(request, 'Account created for '+username)
-            return redirect('dashboard')
+            username = form.cleaned_data['username']
+            print(username, "===============================")
+            messages.success(request, 'Account created for '+username)
+            return redirect('login')
 
     context = {
         'form': form,

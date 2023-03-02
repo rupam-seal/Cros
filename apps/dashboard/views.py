@@ -7,8 +7,6 @@ from apps.core.decorators import admin_only
 
 from django.contrib.auth.decorators import login_required
 
-from apps.core.models import Item
-
 
 # Create your views here.
 

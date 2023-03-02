@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'apps.create.apps.CreateConfig',
     'apps.dashboard.apps.DashboardConfig',
     'apps.orders.apps.OrdersConfig',
-    'apps.staff.apps.StaffConfig',
+    'apps.users.apps.UsersConfig',
     'apps.core.apps.CoreConfig',
     'apps.staffDashboard.apps.StaffdashboardConfig'
 ]
@@ -137,6 +137,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = 'static/images'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

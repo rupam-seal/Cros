@@ -56,30 +56,30 @@
                 <a class="nav__txt" href="{% url 'category' %}">Category</a>
             </div>
             {% if request.user.is_staff %}
-            <div class="nav nav__customer {% if navbar == 'staffs' %} nav--active {% endif %}">
-                {% if navbar == 'staffs' %}
-                <a href="{% url 'staffs' %}">
+            <div class="nav nav__customer {% if navbar == 'users' %} nav--active {% endif %}">
+                {% if navbar == 'users' %}
+                <a href="{% url 'users' %}">
                     <img class="nav__img" src="/static/icons/ic_customers_active.svg"></img>
                 </a>
                 {% else %}
-                <a href="{% url 'staffs' %}">
+                <a href="{% url 'users' %}">
                     <img class="nav__img" src="/static/icons/ic_customers.svg"></img>
                 </a>
                 {% endif %}
-                <a class="nav__txt" href="{% url 'staffs' %}">Staffs</a>
+                <a class="nav__txt" href="{% url 'users' %}">Staffs</a>
             </div>
             {% else %}
-            <div class="nav nav__customer {% if navbar == 'staffs' %} nav--active {% endif %}">
-                {% if navbar == 'staffs' %}
-                <a href="{% url 'staffs' %}">
+            <div class="nav nav__customer {% if navbar == 'users' %} nav--active {% endif %}">
+                {% if navbar == 'users' %}
+                <a href="{% url 'users' %}">
                     <img class="nav__img" src="/static/icons/ic_customers_active.svg"></img>
                 </a>
                 {% else %}
-                <a href="{% url 'staffs' %}">
+                <a href="{% url 'users' %}">
                     <img class="nav__img" src="/static/icons/ic_customers.svg"></img>
                 </a>
                 {% endif %}
-                <a class="nav__txt" href="{% url 'staffs' %}">Customers</a>
+                <a class="nav__txt" href="{% url 'users' %}">Customers</a>
             </div>
             {% endif %}
             <div class="nav nav__create {% if navbar == 'create' %} nav--active {% endif %}">

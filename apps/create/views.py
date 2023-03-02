@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 
-from django.contrib import messages  # import messages
+from django.contrib import messages
 
 from apps.core.models import *
 
-from .forms import CategoryForm, ItemForm, OrderForm, TagForm, CustomerForm
+from .forms import CategoryForm, ItemForm, OrderForm, TagForm
 from apps.core.decorators import allowed_user
 
 from django.contrib.auth.decorators import login_required
@@ -22,26 +22,24 @@ def create(request):
     categoryForm = CategoryForm()
     tagForm = TagForm()
     orderForm = OrderForm()
-    customerForm = CustomerForm()
 
     if request.method == 'POST':
         itemForm = ItemForm(request.POST)
         categoryForm = CategoryForm(request.POST)
         tagForm = TagForm(request.POST)
         orderForm = OrderForm(request.POST)
-        customerForm = CustomerForm(request.POST)
 
         if itemForm.is_valid():
             itemForm.save()
-            return redirect('category')
+            return redirect('create')
 
         if categoryForm.is_valid():
             categoryForm.save()
-            return redirect('category')
+            return redirect('create')
 
         if tagForm.is_valid():
             tagForm.save()
-            return redirect('dashboard')
+            return redirect('create')
 
         if orderForm.is_valid():
             item = orderForm.cleaned_data['item']
@@ -55,11 +53,7 @@ def create(request):
                 items.save()
 
             orderForm.save()
-            return redirect('orders')
-
-        if customerForm.is_valid():
-            customerForm.save()
-            return redirect('dashboard')
+            return redirect('create')
 
     context = {
         'navbar': 'create',
@@ -67,7 +61,6 @@ def create(request):
         'categoryForm': categoryForm,
         'tagForm': tagForm,
         'orderForm': orderForm,
-        'customerForm': customerForm,
     }
 
     return render(request, 'create.html', context)

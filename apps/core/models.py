@@ -1,4 +1,3 @@
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -21,24 +20,6 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-    # # customer page progress bar
-    # def progress(self):
-    #     customer = Customer.objects.get(name=self.name)
-    #     # number of order of a customer
-    #     order = Order.objects.all().count()
-
-    #     # finding percentage of order share in
-    #     # total order by each customers
-    #     if order != 0:
-    #         each = 100/order
-    #     else:
-    #         each = 0
-
-    #     # total percentage of each customer
-    #     total = customer.order_set.all().count() * each
-
-    #     return int(total)
-
 
 class Staff(models.Model):
     GENDER = (
@@ -49,7 +30,7 @@ class Staff(models.Model):
 
     profile_image = models.ImageField(
         default='person.png', null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
     phone = models.IntegerField(default=0, null=True)

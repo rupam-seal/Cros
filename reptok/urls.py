@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include('apps.category.urls')),
     path('', include('apps.orders.urls')),
     path('', include('apps.create.urls')),
-    path('', include('apps.staff.urls')),
+    path('', include('apps.users.urls')),
     # STAFF SITE APPS
     path('', include('apps.staffDashboard.urls')),
 ]

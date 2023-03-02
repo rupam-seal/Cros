@@ -32,43 +32,7 @@
     </div>
     
     <!-- ---------- RECENT ORDERS TABLE ---------- -->
-    <h4 class="table-title">Recent Orders</h4>
-    <table class="table">
-      <!-- table header -->
-        <thead class="table__header">
-            <tr class="table__header-raw">
-              <th class="col col1">Id</th>
-              <th class="col col2">Item</th>
-              <th class="col col3">Date</th>
-              <th class="col col4">Rate</th>
-              <th class="col col5">Price</th>
-              <th class="col col6">Status</th>
-            <tr>
-          </thead>
-        <!-- table body -->
-          <!-- get all order from 'orders' model -->
-          {% for order in orders %}
-          <tbody class="table__body">
-            <tr class="table__body-raw">
-              <td class="col col1">{{order.id}}</td>
-              <td class="col col2">{{order.item}}</td>
-              <td class="col col3">{{order.date_created}}</td>
-              <th class="col col4">{{order.rate}}</th>
-              <td class="col col4">{{order.price}}</td>
-                <!-- showing different button as per the status -->
-                {% if order.status == 'Paid' %}
-                <td class="col col5">
-                    <button class="table__status table__status--paid">Paid</button>
-                </td>
-                {% else %}
-                <td class="col col5">
-                    <button class="table__status table__status--pending">Pending</button>
-                </td>
-                {% endif %}
-            </tr>
-          </tbody>
-          {% endfor %}
-          <tbody class="table__body">
+    {% include 'recentOrder.html' %}
     </table>
     <!-- empty container ( for showing "NOTHING HERE") -->
     {% include 'nothing.html' %}
