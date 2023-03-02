@@ -1,4 +1,0 @@
-========== ON VSCODE ==========
-go to settings
-search 'javascript.validate'
-deselect 'HTML › Validate: Scripts'

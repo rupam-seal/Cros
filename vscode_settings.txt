@@ -1,0 +1,4 @@
+# ON VSCODE (FOR INLINE DJANGO CODE IN CSS RED FLAG)
+
+[1] go to settings
+[2] uncheck 'HTML › Validate: styles'

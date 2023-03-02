@@ -1,4 +1,4 @@
-"""reptok URL Configuration
+"""cros URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -19,10 +19,9 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-# from admin_user.views import search_result
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     # ADMIN SITE APPS
     path('', include('apps.authentication.urls')),
     path('', include('apps.dashboard.urls')),
