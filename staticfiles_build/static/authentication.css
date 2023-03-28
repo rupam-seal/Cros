@@ -1,0 +1,125 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #121418 !important;
+}
+.user_card {
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #222222;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: rgba(89, 89, 89, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+}
+
+.form_container {
+  margin-top: 20px;
+}
+
+#form-title {
+  color: var(--colorWhite);
+}
+.login_btn {
+  width: 100%;
+  background: #e5cd71 !important;
+  color: #121418 !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+
+.form-control,
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+  border-color: #848484;
+  background-color: #272727;
+  border-style: solid;
+  color: #ffffff;
+}
+
+.form-control:focus,
+#id_username:focus,
+#id_email:focus,
+#id_password1:focus,
+#id_password2:focus {
+  color: #ffffff;
+  box-shadow: none !important;
+  outline: 0px !important;
+  background-color: #272727;
+}
+
+.input_user {
+  background-color: #e5cd71;
+}
+
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.input-group-text {
+  background: var(--colorDarkExtraLight) !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.links {
+  color: #848484;
+}
+
+.links a {
+  color: #e8eaee;
+}
+
+#messages {
+  background-color: grey;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.desc {
+  color: #848484;
+}
+
+.div {
+  width: 30px;
+}
+
+.navigation {
+  background-color: #e5cd71;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.navigation-card {
+  width: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #222222;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
