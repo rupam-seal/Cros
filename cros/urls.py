@@ -31,6 +31,8 @@ urlpatterns = [
     path('', include('apps.users.urls')),
     # STAFF SITE APPS
     path('', include('apps.staffDashboard.urls')),
+    # GUEST SITE APPS
+    path('', include('apps.guest.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

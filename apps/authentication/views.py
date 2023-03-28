@@ -67,3 +67,7 @@ def logoutUser(request):
 @unautheticated_user
 def navigation(request):
     return render(request, 'navigation.html')
+
+@unautheticated_user
+def chooseUser(request):
+    return render(request, 'chooseUser.html')

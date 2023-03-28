@@ -3,15 +3,15 @@
 {% block content %}
 <div class="navigation h-100">
     <div class="d-flex justify-content-center h-100">
-        <a class="navigation-card" href="{% url 'login' %}">
+        <a class="navigation-card" href="{% url 'guestDashboard' %}">
           <div class="d-flex justify-content-center">
-            <h5 id="form-title">AUTH</h5>
+            <h5 id="form-title">ADMIN USER</h5>
           </div>
         </a>
         <div class="div"></div>
-        <a class="navigation-card" href="{% url 'chooseUser' %}">
+        <a class="navigation-card" href="{% url 'staffDashboard' %}">
             <div class="d-flex justify-content-center">
-              <h5 id="form-title">GUEST</h5>
+              <h5 id="form-title">STAFF USER</h5>
             </div>
         </a>
     </div>

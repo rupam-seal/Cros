@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'apps.orders.apps.OrdersConfig',
     'apps.users.apps.UsersConfig',
     'apps.core.apps.CoreConfig',
-    'apps.staffDashboard.apps.StaffdashboardConfig'
+    'apps.staffDashboard.apps.StaffdashboardConfig',
+    'apps.guest.apps.GuestConfig',
 ]
 
 MIDDLEWARE = [
