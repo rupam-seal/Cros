@@ -28,7 +28,7 @@ https://cros-crm.vercel.app/
 Clone the project
 
 ```bash
-  git clone https://github.com/rupam-seal/imo.git
+  git clone https://github.com/rupam-seal/Cros.git
 ```
 
 <br>
@@ -36,7 +36,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd imo
+  cd cros
 
 ```
 
