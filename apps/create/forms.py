@@ -73,15 +73,15 @@ class CategoryForm(ModelForm):
             'name': TextInput(attrs={
                 'class': "form__inp",
             }),
-            'status': Select(attrs={
-                'class': "form__select-inp",
-            }),
+            # 'status': Select(attrs={
+            #     'class': "form__select-inp",
+            # }),
         }
 
 
-class TagForm(ModelForm):
+class BrandForm(ModelForm):
     class Meta:
-        model = Tag
+        model = Brand
         fields = '__all__'
         widgets = {
             'name': TextInput(attrs={

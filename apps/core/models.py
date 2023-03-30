@@ -47,14 +47,14 @@ class Category(models.Model):
     )
 
     name = models.CharField(max_length=200, null=True)
-    status = models.CharField(max_length=200, null=True, choices=STATUS)
+    # status = models.CharField(max_length=200, null=True, choices=STATUS)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.name
 
 
-class Tag(models.Model):
+class Brand(models.Model):
     name = models.CharField(max_length=200, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
@@ -68,7 +68,7 @@ class Item(models.Model):
     quantity = models.IntegerField(default=0, null=True)
     category = models.ForeignKey(
         Category, null=True, on_delete=models.SET_NULL)
-    tag = models.ForeignKey(Tag, null=200, on_delete=models.SET_NULL)
+    tag = models.ForeignKey(Brand, null=200, on_delete=models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

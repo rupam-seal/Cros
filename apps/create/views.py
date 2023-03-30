@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from apps.core.models import *
 
-from .forms import CategoryForm, ItemForm, OrderForm, TagForm
+from .forms import CategoryForm, ItemForm, OrderForm, BrandForm
 from apps.core.decorators import allowed_user
 
 from django.contrib.auth.decorators import login_required
@@ -20,13 +20,13 @@ from apps.core.models import Item
 def create(request):
     itemForm = ItemForm()
     categoryForm = CategoryForm()
-    tagForm = TagForm()
+    brandForm = BrandForm()
     orderForm = OrderForm()
 
     if request.method == 'POST':
         itemForm = ItemForm(request.POST)
         categoryForm = CategoryForm(request.POST)
-        tagForm = TagForm(request.POST)
+        brandForm = BrandForm(request.POST)
         orderForm = OrderForm(request.POST)
 
         if itemForm.is_valid():
@@ -37,8 +37,8 @@ def create(request):
             categoryForm.save()
             return redirect('create')
 
-        if tagForm.is_valid():
-            tagForm.save()
+        if brandForm.is_valid():
+            brandForm.save()
             return redirect('create')
 
         if orderForm.is_valid():
@@ -59,7 +59,7 @@ def create(request):
         'navbar': 'create',
         'itemform': itemForm,
         'categoryForm': categoryForm,
-        'tagForm': tagForm,
+        'brandForm': brandForm,
         'orderForm': orderForm,
     }
 

@@ -18,12 +18,12 @@
           </div>
         </div>
 
-        <div class="form__list">
+        <!-- <div class="form__list">
           <div class="form__item">
             <h5 class="form__name">Name</h5>
-            <div class="form-group">{{categoryForm.status}}</div>
+            <div class="form-group"></div>
           </div>
-        </div>
+        </div> -->
 
         <input type="submit" name="submit" class="form__button" />
       </div>
@@ -33,13 +33,13 @@
       {% csrf_token %}
       <div class="form__card form__tag-card">
         <div class="form__header-container">
-          <h5 class="form__header">Tag</h5>
+          <h5 class="form__header">Brand</h5>
         </div>
 
         <div class="form__list">
           <div class="form__item">
             <h5 class="form__name">Name</h5>
-            <div class="form-group">{{tagForm.name}}</div>
+            <div class="form-group">{{brandForm.name}}</div>
           </div>
         </div>
 
