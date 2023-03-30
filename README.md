@@ -1,4 +1,4 @@
-# Imo 📷
+# Cros 🏪
 <p>
 Cros is a customer relationship management (CRM) software built with Django, specifically designed for shop owners to help manage and track customer interactions, sales, and inventory. The application offers features such as sales reporting, customer analytics, and inventory management to help shop owners streamline their operations and improve their customer service.
 </p>
