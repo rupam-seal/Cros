@@ -12,7 +12,7 @@ https://cros-crm.vercel.app/
 <br>
 
 ## 🕹️ Demo
-<img src="" width="700"/>
+<img src="https://user-images.githubusercontent.com/72932336/228728520-1db5797e-fb82-4b11-907c-18398ac7be21.png" width="700"/>
 
 <br>
 
